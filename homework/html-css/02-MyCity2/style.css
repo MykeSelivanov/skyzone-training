@@ -1,0 +1,17 @@
+body {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.heading01 {
+    background-color: red;
+}
+
+.headings02 {
+    color: rgb(200, 7, 7);
+    background-color: rgb(126, 214, 126);
+}
+
+.mainTxt {
+    color: blue;
+}
