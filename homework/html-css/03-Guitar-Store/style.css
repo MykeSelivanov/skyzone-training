@@ -1,0 +1,36 @@
+:root {
+    --bg-color: rgb(233, 227, 227);
+}
+
+body {
+    padding: 0;
+    background-color: var(--bg-color);
+}
+
+.headerTxt {
+    background-color: orangered;
+    padding: 5px;
+}
+
+ul {
+    padding: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 1px solid black;
+}
+
+ul > li > span {
+    color: rgb(189, 128, 15);
+}
+
+.beforeFooter {
+    padding: 20px;
+}
+
+footer > p {
+    padding: 10px;
+    padding-top: 15px;
+    padding-left: 750px;
+    border-top: 1px solid black;
+    margin: 15px;
+}
