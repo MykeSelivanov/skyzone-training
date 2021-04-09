@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  .box:first-child {
+    margin-right: 5px;
+  }
+  
+  .item, .item-sm {
+     box-shadow: 0 0 5px gray;
+     height: calc(600px/3);
+  }
+
+  .item:nth-child(2) {
+    margin: 5px 0;
+  }
+
+  .item-lg {
+    box-shadow: 0 0 5px gray;
+    height: 55%;
+    margin-bottom: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .item-sm {
+      height: 36.75%;
+  }
+
+  .item-lg .price {
+      margin-top: 0;
+  }
+  
+  
+  /* items */
+  
+  .item {
+    display: flex;
+    flex-direction: space-between;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .item > div:first-child {
+    flex: 1;
+  }
+
+  .item > div:last-child {
+    flex: 2;
+  }
+
+  .item img {
+    width: 60%;
+    height: 60%;
+  }
+
+  .item-sm {
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .item-sm > div:first-child {
+    display: flex;
+  }
+  
+  .item-sm img {
+    width: 25%;
+    height: 25%;
+    border: 2px solid white;
+  }
+  
+  .item-lg img {
+    width: 350px;
+    height: 250px;
+    margin-top: 25px;
+  }
