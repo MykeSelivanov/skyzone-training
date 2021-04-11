@@ -1,0 +1,79 @@
+.container {
+    background: #fff;
+    border: 1px solid;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr) ;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    "card1 card1 card1 card1 card2 card2"
+    "card1 card1 card1 card1 card2 card2"
+    "card3 card3 card4 card4 card5 card5"
+    "card6 card6 . . . .";
+}
+
+.container div {
+    box-shadow: 0 0 5px gray;
+    margin: 10px;
+}
+
+button {
+    border-style: none;
+    background: grey;
+    color: honeydew;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    height: 40px;
+}
+
+h3 {
+    margin-left: 2.5%;
+}
+
+p {
+    margin-left: 2.5%;
+}
+
+div > img {
+    height: auto;
+    width: auto;
+    overflow: hidden;
+
+}
+
+.card1, .card2, .card3, .card4, .card5, .card6 {
+    display: flex;
+    flex-direction: column;
+}
+
+.card1 > button {
+    margin-bottom: 2%;
+}
+
+
+/* grid layout */
+.card1 {
+    grid-area: card1;
+}
+
+.card2 {
+    grid-area: card2;
+}
+
+.card3 {
+    grid-area: card3;
+}
+
+.card4 {
+    grid-area: card4;
+}
+
+.card5 {
+    grid-area: card5;
+}
+
+.card6 {
+    grid-area: card6;
+}
+
