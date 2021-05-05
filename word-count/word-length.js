@@ -14,7 +14,7 @@ calculateBtn.addEventListener('click', () => {
     const wordLength = inputValue.length;
 
     // append it to output element
-    outputEl.innerHTML = `<h1>${wordLength}`;
+    outputEl.innerHTML = `<h1>${wordLength}</h1>`;
 });
 
 // Styling
