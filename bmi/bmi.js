@@ -6,8 +6,8 @@ const results = document.querySelector('#results');
 
 calculateBtn.addEventListener('click', (event) => {
     // check for empty inputs
+    event.preventDefault();
     if (height.value === '' || weight.value === '') {
-        event.preventDefault();
         alert('You need to provide both height and weight inputs');
     } else {
         // parse inputs
