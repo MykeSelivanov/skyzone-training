@@ -61,5 +61,5 @@ const playFunc = function(){
 playBtn.addEventListener('click', playFunc);
 
 stopBtn.addEventListener('click', () => {
-    allIntervals.forEach(clearInterval)
+    allIntervals.forEach(clearInterval);
 });
