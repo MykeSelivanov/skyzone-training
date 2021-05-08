@@ -39,15 +39,6 @@ calculateBtn.addEventListener('click', () => {
     };
 });
 
-// const tipAmount = document.createElement('p');
-// const totalAmount = document.createElement('p');
-// const eachPerson = document.createElement('p');
-// tipAmount.textContent = `Tip Amount $ ${Number.parseInt(totalBill.value) * selectedTipOption}`;
-// totalAmount.textContent = `Total Amount $ ${billWithTips}`;
-// eachPerson.textContent = `Each Person $ ${billPerPerson}`;
 
-// inputsBox.append(tipAmount);
-// inputsBox.append(totalAmount);
-// inputsBox.append(eachPerson);
 
 
