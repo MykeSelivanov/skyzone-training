@@ -22,8 +22,8 @@ const leftArrow = document.getElementById('icon-left');
 const imgContainer = document.querySelector('.img-container');
 
 let count = 0;
-// right slide click
 const imgSlider = (index) => { 
+// right slide click
     rightArrow.addEventListener('click', () => {
         index++;
         if (index === pictures.length) {
