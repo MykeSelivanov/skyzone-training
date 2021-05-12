@@ -1,0 +1,33 @@
+.hole {
+    background: black;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+.mole {
+    background-image: url("mole.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#hit-a-mole {
+    background: darkgreen;
+    width: 370px;
+    height: 370px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 10px auto;
+    border: 10px solid gray;
+}
+
+#score:before {
+    content: "Your score: "
+}
+
+#container {
+    border: 1px solid lightgray;
+    max-width: 1000px;
+    margin: 40px auto;
+    text-align: center;
+}

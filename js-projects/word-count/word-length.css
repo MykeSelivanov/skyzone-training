@@ -1,0 +1,53 @@
+/* globals */
+* {
+    box-sizing: border-box;
+}
+button {
+    cursor: pointer;
+    outline: none;
+}
+body{
+    background-color:#000;
+    text-align: center;
+}
+/* word count */
+
+.wrapper {
+    width: 50%;
+    margin: 80px auto;
+    padding: 20px 10px;
+    background-image: linear-gradient(to right, blue, red);
+    color: #fff;    
+}
+
+input, #btn {
+    text-align: center;
+    outline: none;
+    overflow: auto;
+    background: transparent;
+    border: 1px dashed #fff;
+    color: inherit;
+    border-radius: 10px;
+    padding: 5px;
+}
+input {
+    width: 80%;
+    height: 40px;
+    font-size: 80%; 
+}
+#btn {
+    margin: 40px auto;
+    font-size: 50%;
+}
+
+.style, #reset {
+    padding: 10px;
+    border-style: none;
+    background: green;
+    font-size: 80%;
+    border-radius: 5px;
+}
+#output {
+    color: #3bff89;
+}
+

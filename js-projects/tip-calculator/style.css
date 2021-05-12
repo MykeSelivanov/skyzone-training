@@ -1,0 +1,16 @@
+body {
+    margin: 5%;
+}
+
+input {
+    width: 90%;
+}
+
+select {
+    width: 90%;
+}
+
+button {
+    margin-top: 3%;
+    margin-right: 10%;
+}
