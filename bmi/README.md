@@ -1,8 +1,0 @@
-# BMI 
-Starter Code 
-
-
-
-
-
-
