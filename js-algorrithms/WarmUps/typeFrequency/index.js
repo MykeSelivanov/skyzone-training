@@ -29,5 +29,21 @@
 //         });
 //     return Types;
 // }
+
+// solution 2
+const typeFreq = (mixArr) => {
+    if(mixArr.length === 0) return -1;
+    const typeObj = {};
+    mixArr.forEach(el => {
+      const key = typeof el;
+      if(typeObj[key]) {
+        typeObj[key]++;
+      } else {
+        typeObj[key] = 1;
+      }
+    })
+    return typeObj;
+  }
     
 typeFreq([1,2,3,'asd', {}, null, undefined, true, false, 1, 2, 4]);
+typeFreq([1,4,'asd', true, null, undefined]);
