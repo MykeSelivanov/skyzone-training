@@ -16,9 +16,51 @@ body {
 
 td {
   transition: background-color 0.5s ease;
+  background-color: lightgray;
+  height: 50px;
+  width: 50px;
 }
-
 
 select, button {
   height: 24px;
+}
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.indigo {
+  background-color: indigo;
+}
+
+.violet {
+  background-color: violet;
+}
+
+.black {
+  background-color: black;
+}
+
+.white {
+  background-color: white;
+}
+
+.brown {
+  background-color: brown;
 }
