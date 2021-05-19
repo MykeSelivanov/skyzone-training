@@ -46,9 +46,43 @@ function updateDOM(providedUsers = users) {
 const doubleMoney = () => {
     users = users.map(user => {
         return {...user, money: user.money  * 2} // user.name, user.last, user.money: user.money * 2
-    })
+    });
    updateDOM();
 }
 
+// show only millionaires
+const showMillionaires = () => {
+    users = users.filter(user => user.money > 1000000);
+    updateDOM();
+}
+
+// sort by richest
+const sortByMoney = () => {
+    users = users.sort((user1,user2) => user2.money - user1.money);
+    updateDOM();
+}
+
+// calculate entire wealth
+const calcEntireWealth = () => {
+    const entireWealth = users.reduce((total, user) => {
+        return total += user.money;
+    }, 0);
+    const element = document.createElement("div");
+        element.classList.add("person");
+        const wealthText = document.createElement("h4");
+        wealthText.textContent = `Total Wealth:`;
+        wealthText.style.fontWeight = 'normal';
+        const wealthNum = document.createElement("h4");
+        wealthNum.textContent = `${entireWealth}`;
+        wealthNum.style.fontWeight = 'normal';
+        element.append(wealthText);
+        element.append(wealthNum);
+        personWealth.appendChild(element);
+}
+
+
 addUsrBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
+showMillionairesBtn.addEventListener('click', showMillionaires);
+sortBtn.addEventListener('click', sortByMoney);
+calculateWealthBtn.addEventListener('click',calcEntireWealth);
