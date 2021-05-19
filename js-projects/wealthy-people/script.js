@@ -5,7 +5,7 @@ const sortBtn = document.getElementById('sort');
 const calculateWealthBtn = document.getElementById('calculate-wealth');
 const personWealth = document.querySelector('main');
 
-const users = [];
+let users = [];
 
 async function getRandomUser() {
     const result = await fetch("https://randomuser.me/api/");
@@ -18,14 +18,16 @@ async function getRandomUser() {
     addUser(newUser);
 }
 
-getRandomUser();
-
 const addUser = (newUser) => {
-    users.push(newUser);
+    users.unshift(newUser);
     updateDOM();
 }
 
-const updateDOM = () => {
+const storeUser = () => {
+    users.unshift()
+}
+
+function updateDOM() {
     const element = document.createElement('div');
     element.classList.add('person');
     const userName = document.createElement('h4');
@@ -36,3 +38,14 @@ const updateDOM = () => {
     element.append(userMoney);
     personWealth.append(element);
 }
+
+// double money
+const doubleMoney = () => {
+    users = users.map(user => user.money *= 2);
+    console.log(users);
+}
+
+// add user
+addUsrBtn.addEventListener('click', getRandomUser);
+doubleBtn.addEventListener('click', doubleMoney);
+
