@@ -1,2 +1,2 @@
 # wealthy-people
-Wealthy People Starter Code
+Pet project for arrays methods practice
