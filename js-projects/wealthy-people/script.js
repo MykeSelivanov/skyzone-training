@@ -27,25 +27,28 @@ const storeUser = () => {
     users.unshift()
 }
 
-function updateDOM() {
-    const element = document.createElement('div');
-    element.classList.add('person');
-    const userName = document.createElement('h4');
-    userName.textContent = `${users[0].name}`;
-    const userMoney = document.createElement('h4');
-    userMoney.textContent = `${users[0].money}`;
-    element.append(userName);
-    element.append(userMoney);
-    personWealth.append(element);
+function updateDOM(providedUsers = users) {
+    personWealth.innerHTML = `<h2><strong>Person</strong> Wealth</h2>`;
+    providedUsers.forEach((user) => {
+        const element = document.createElement("div");
+        element.classList.add("person");
+        const userName = document.createElement("h5");
+        userName.textContent = `${user.name}`;
+        const userMoney = document.createElement("h5");
+        userMoney.textContent = `${user.money}`;
+        element.append(userName);
+        element.append(userMoney);
+        personWealth.appendChild(element);
+    });
 }
 
 // double money
 const doubleMoney = () => {
-    users = users.map(user => user.money *= 2);
-    console.log(users);
+    users = users.map(user => {
+        return {...user, money: user.money  * 2} // user.name, user.last, user.money: user.money * 2
+    })
+   updateDOM();
 }
 
-// add user
 addUsrBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
-
