@@ -86,3 +86,5 @@ doubleBtn.addEventListener('click', doubleMoney);
 showMillionairesBtn.addEventListener('click', showMillionaires);
 sortBtn.addEventListener('click', sortByMoney);
 calculateWealthBtn.addEventListener('click',calcEntireWealth);
+
+
