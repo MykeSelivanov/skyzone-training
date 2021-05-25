@@ -1,1 +1,1 @@
-// your code
+const searchBtn = document.getElementsByTagName('button');
