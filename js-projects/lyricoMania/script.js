@@ -6,10 +6,27 @@ const searchInput = document.querySelector('input');
 async function searchSongs(input) {
     let response = await fetch(`https://api.lyrics.ovh/suggest/${input}`);
     let result = await response.json();
-    return result.data;
+    
+    
 }
 
-// search lyrics
+// show data
+const showData = (data) => {
+    result.innerHTML = `
+        <ul class="songs">
+        ${data.data
+            .map(
+            song => `<li>
+        <span><strong>${song.artist.name}</strong> - ${song.title}</span>
+        <button class="btn" data-artist="${song.artist.name}" data-songtitle="${song.title}">Get Lyrics</button>
+        </li>`
+            )
+            .join('')}
+        </ul>
+    `;
+}
+
+    // search lyrics
 searchBtn.addEventListener('click', async (event) => {
     event.preventDefault();
 
@@ -17,7 +34,6 @@ searchBtn.addEventListener('click', async (event) => {
     if(!userInput) {
         alert('Plese provide an input');
     } else {
-        let data = await searchSongs(userInput);
-        console.log(data);
+        searchSongs(userInput);
     }
 });
