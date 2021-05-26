@@ -1,5 +1,9 @@
-{{#each songs}}
-<div class="eachSong">
-    <p><strong>{{this}}</strong></p>
-</div>
-{{/each}}
+{{#if songs}}
+    {{#each songs}}
+    <div class="eachSong">
+        <p><strong>{{this}}</strong></p>
+    </div>
+    {{/each}}
+{{else}}
+    <p>There are no songs to print!!!</p>
+{{/if}}
