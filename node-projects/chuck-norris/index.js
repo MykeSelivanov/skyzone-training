@@ -13,6 +13,9 @@ let foods = ['avocado', 'broccoli', 'carrots', 'apple'];
 let songs = ['Good 4 U', 'Sweet Melody', 'More Than My Hometown', 'Old Town Road', 'Blinding Lights', 'Rain on Me'];
 
 // routes
+/**
+ * Home route - renders home page
+ */
 app.get('/', (req, res) => {
     let msg = 'hi';
     let errMsg = "<h1>there's been an error</h1>";
@@ -20,6 +23,9 @@ app.get('/', (req, res) => {
     res.render('home', {item1, foods});
 });
 
+/**
+ * SongList route - renders the list of songs
+ */
 app.get('/songList', (req, res) => {
     res.render('song_list', {songs});
 });
