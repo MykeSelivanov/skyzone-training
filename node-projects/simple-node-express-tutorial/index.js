@@ -4,9 +4,9 @@ const express = require('express');
 // creating app/server
 const app = express();
 
-// port
-const PORT = 3000;
-console.log(process.env);
+// use the port from provided environment, in case it's undefined, run the app on 3000
+const PORT = process.env.PORT || 3000;
+
 
 // listen
 app.listen(PORT, () => {
