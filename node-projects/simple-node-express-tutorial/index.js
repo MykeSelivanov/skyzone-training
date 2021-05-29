@@ -34,7 +34,14 @@ app.get('/', (req, res) => {
 });
 
 app.get("/api/students", (req, res) => {
-    res.sendFile(__dirname + "/public/" + "index.html");
+    // send all students
+    console.log(`req`, req);
+    res.json(students);
+});
+
+app.get("/api/students/:id", (req, res) => {
+    console.log(req.params.id);
+    res.send("Check console: ");
 });
 
 // use the port from provided environment, in case it's undefined, run the app on 3000
