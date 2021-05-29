@@ -35,6 +35,9 @@ app.get('/', (req, res) => {
 
 app.get("/api/students", (req, res) => {
     // send all students
+    params: {
+        id: 1
+    }
     console.log(`req`, req);
     res.json(students);
 });
