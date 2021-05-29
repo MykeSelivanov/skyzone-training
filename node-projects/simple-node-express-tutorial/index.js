@@ -33,6 +33,10 @@ app.get('/', (req, res) => {
     res.json(students);
 });
 
+app.get("/api/students", (req, res) => {
+    res.sendFile(__dirname + "/public/" + "index.html");
+});
+
 // use the port from provided environment, in case it's undefined, run the app on 3000
 const PORT = process.env.PORT || 3000;
 
