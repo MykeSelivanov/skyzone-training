@@ -41,10 +41,13 @@ app.get("/api/students", (req, res) => {
 });
 
 app.get("/api/students/:id", (req, res) => {
+    // retrieve params data
+    
     const id = req.params.id;
+    console.log(id);
     
     console.log(req.params.id);
-    res.send("Check console: ");
+    res.send("Your id is: ", res.params.id);
 });
 
 // use the port from provided environment, in case it's undefined, run the app on 3000
