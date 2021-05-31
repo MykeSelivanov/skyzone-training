@@ -43,12 +43,14 @@ app.get("/api/students", (req, res) => {
 app.get("/api/students/:id", (req, res) => {
     // retrieve params data
     const paramId = req.params.id;
-    const student = students.filter((student) => student.id === Number.parseInt(paramId));
-    console.log(student);
-    console.log("typeof 1: ", typeof paramId);
-    console.log("typeof 2: ", typeof student.id);
 
-    res.send(student);
+    const isFound = students.some((student) => student.id === Number.parseInt(paramId));
+    if(isFound) {
+        const student = students.filter((student) => student.id === Number.parseInt(paramId));
+        res.status(200).send(student);
+    } else {
+        res.status(404).json(`Student with id of ${paramId} not found`);
+    }
 });
 
 // use the port from provided environment, in case it's undefined, run the app on 3000
