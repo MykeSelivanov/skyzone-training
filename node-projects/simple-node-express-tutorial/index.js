@@ -35,14 +35,14 @@ app.get('/', (req, res) => {
 
 app.get("/api/students", (req, res) => {
     // send all students
-    params: {
-        id: 1
-    }
+
     console.log(`req`, req);
     res.json(students);
 });
 
 app.get("/api/students/:id", (req, res) => {
+    const id = req.params.id;
+    
     console.log(req.params.id);
     res.send("Check console: ");
 });
