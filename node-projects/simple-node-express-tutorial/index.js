@@ -42,12 +42,13 @@ app.get("/api/students", (req, res) => {
 
 app.get("/api/students/:id", (req, res) => {
     // retrieve params data
-    
-    const id = req.params.id;
-    console.log(id);
-    
-    console.log(req.params.id);
-    res.send("Your id is: ", res.params.id);
+    const paramId = req.params.id;
+    const student = students.filter((student) => student.id === Number.parseInt(paramId));
+    console.log(student);
+    console.log("typeof 1: ", typeof paramId);
+    console.log("typeof 2: ", typeof student.id);
+
+    res.send(student);
 });
 
 // use the port from provided environment, in case it's undefined, run the app on 3000
