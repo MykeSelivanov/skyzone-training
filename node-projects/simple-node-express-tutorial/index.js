@@ -35,7 +35,6 @@ app.get('/', (req, res) => {
 
 app.get("/api/students", (req, res) => {
     // send all students
-
     console.log(`req`, req);
     res.json(students);
 });
@@ -43,7 +42,7 @@ app.get("/api/students", (req, res) => {
 app.get("/api/students/:id", (req, res) => {
     // retrieve params data
     const paramId = req.params.id;
-
+    // const queryId = req.query.id;
     const isFound = students.some((student) => student.id === Number.parseInt(paramId));
     if(isFound) {
         const student = students.filter((student) => student.id === Number.parseInt(paramId));
@@ -52,6 +51,8 @@ app.get("/api/students/:id", (req, res) => {
         res.status(404).json(`Student with id of ${paramId} not found`);
     }
 });
+
+
 
 // use the port from provided environment, in case it's undefined, run the app on 3000
 const PORT = process.env.PORT || 3000;
