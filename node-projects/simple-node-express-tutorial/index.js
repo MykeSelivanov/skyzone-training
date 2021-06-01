@@ -1,58 +1,34 @@
 // import modules
 const express = require('express');
-const path = require('path');
+// const path = require('path');
+const studentsRoutes = require('./routes/students.js');
 
 // creating app/server
 const app = express();
-const students = [
-    {
-        id: 1,
-        name: "Max"
-    },
-    {
-        id: 2,
-        name: "Peter"
-    },
-    {
-        id: 3,
-        name: "Mike"
-    },
-    {
-        id: 4,
-        name: "Umar"
-    },
-];
 
-// getting directory path
-// console.log(path.join(__dirname, "public"));
+// middleware
+const timeLog = (req, res, next) => {
+    console.log(`Request hit at:  ${Date.now()}`);
+    next();
+};
 
-// routes
-app.get('/', (req, res) => {
-    // res.send("<h1>Hello World</h1>");
-    // res.sendFile(__dirname + "/public/" + "index.html");
-    res.json(students);
+const timeLog2 = (req, res, next) => {
+    console.log(`Request was done at: ${Date.now()}`);
+    // always call next in your middlewares
+    next();
+};
+
+// this middleware will be applied to all routes
+app.use(timeLog);
+// app.use(timeLog2);
+
+// index route
+app.get('/', timeLog2, (req, res) => {
+    res.sendFile(__dirname + "/public/" + "index.html");
 });
 
-app.get("/api/students", (req, res) => {
-    // send all students
-    console.log(`req`, req);
-    res.json(students);
-});
-
-app.get("/api/students/:id", (req, res) => {
-    // retrieve params data
-    const paramId = req.params.id;
-    // const queryId = req.query.id;
-    const isFound = students.some((student) => student.id === Number.parseInt(paramId));
-    if(isFound) {
-        const student = students.filter((student) => student.id === Number.parseInt(paramId));
-        res.status(200).send(student);
-    } else {
-        res.status(404).json(`Student with id of ${paramId} not found`);
-    }
-});
-
-
+// students routes
+app.use("/api/students", studentsRoutes);
 
 // use the port from provided environment, in case it's undefined, run the app on 3000
 const PORT = process.env.PORT || 3000;
